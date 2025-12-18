@@ -2,9 +2,15 @@
 
 ## Tech stack i used for this portfolio project
 
-**html** -for skeleton of site
----
-**css** - for better looking custom style sheet
----
-**js** - make more dynamic site
+**HTML**  
+> The backbone of the website — responsible for structuring the content and layout.
 
+---
+
+**CSS**  
+> Adds style, personality, and responsiveness through custom designs and layouts.
+
+---
+
+**JavaScript**  
+> Brings the site to life by adding interactivity, dynamic behavior, and user engagement.

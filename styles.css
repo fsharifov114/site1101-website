@@ -354,7 +354,9 @@ body {
   flex: 1;
 }
 
-.project-media a { display: inline-block; }
+.project-media { position: relative; }
+
+.project-media a { display: block; z-index: 2; position: relative; }
 
 .project-media img {
   width: 220px;

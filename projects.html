@@ -78,7 +78,7 @@
                             </div>
                         </div>
                         <div class="project-media">
-                            <a href="https://fsharifov114.github.io/site1101-website/images/project1.jpg" target="_blank" rel="noopener noreferrer" title="Open image in new tab" onclick="window.open('https://fsharifov114.github.io/site1101-website/images/project1.jpg','_blank'); return false;">
+                            <a id="project1-link" href="https://fsharifov114.github.io/site1101-website/images/project1.jpg" rel="noopener noreferrer" title="Open image">
                                 <img src="images/project1.jpg" alt="Team 24 - Logic Gates project photo">
                             </a>
                         </div> 
@@ -103,6 +103,15 @@
     </footer>
 
     </div>
+
+    <!-- Lightbox modal (only used on Projects page) -->
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+        <img id="lightbox-img" src="" alt="Expanded project image">
+      </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

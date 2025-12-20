@@ -71,3 +71,45 @@ document.querySelectorAll(".stat-card, .project-card, .info-card").forEach((el) 
   el.style.transition = "opacity 0.6s ease, transform 0.6s ease"
   observer.observe(el)
 })
+
+// Lightbox for Project 1 image (only runs on Projects page where #project1-link exists)
+;(function () {
+  const link = document.getElementById('project1-link')
+  const lightbox = document.getElementById('lightbox')
+  const lbImg = document.getElementById('lightbox-img')
+  const lbClose = document.getElementById('lightbox-close')
+
+  if (!link || !lightbox || !lbImg || !lbClose) return
+
+  link.addEventListener('click', function (e) {
+    e.preventDefault()
+    const src = link.href || (link.querySelector('img') && link.querySelector('img').src)
+    if (!src) return
+    lbImg.src = src
+    lightbox.classList.add('open')
+    lightbox.setAttribute('aria-hidden', 'false')
+  })
+
+  lbClose.addEventListener('click', function () {
+    lightbox.classList.remove('open')
+    lightbox.setAttribute('aria-hidden', 'true')
+    lbImg.src = ''
+  })
+
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('open')
+      lightbox.setAttribute('aria-hidden', 'true')
+      lbImg.src = ''
+    }
+  })
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+      lightbox.classList.remove('open')
+      lightbox.setAttribute('aria-hidden', 'true')
+      lbImg.src = ''
+    }
+  })
+})()
+

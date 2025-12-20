@@ -354,32 +354,51 @@ body {
   flex: 1;
 }
 
-.project-media { position: relative; }
+/* Project media placeholder box (keeps layout consistent with the design) */
+.project-media {
+  position: relative;
+  flex: 0 0 260px; /* reserve space beside the text */
+  width: 260px;
+  height: 160px;
+  background-color: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.project-media a { display: block; z-index: 2; position: relative; }
+.project-media a { display: block; z-index: 2; position: relative; width:100%; height:100%; }
 
 .project-media img {
-  width: 220px;
-  height: auto;
-  border-radius: 0.5rem;
-  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.15);
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 1px solid var(--border-color);
-  cursor: zoom-in;
+  border-radius: 0;
+  box-shadow: none;
   transition: transform 0.15s ease;
+  cursor: zoom-in;
 }
 
 .project-media img:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 @media (max-width: 768px) {
   .project-content {
     flex-direction: column;
   }
+  .project-media {
+    flex: none;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+  .project-media a,
   .project-media img {
     width: 100%;
-    max-width: 400px;
+    height: auto;
   }
 }
 

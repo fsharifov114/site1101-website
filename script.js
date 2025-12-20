@@ -104,6 +104,22 @@ document.querySelectorAll(".stat-card, .project-card, .info-card").forEach((el) 
     }
   })
 
+  // Also bind an explicit "Open Image" link in case clicking the image itself is blocked
+  const openBtn = document.getElementById('project1-open-image')
+  if (openBtn) {
+    openBtn.addEventListener('click', function (e) {
+      e.preventDefault()
+      const src = openBtn.href || (link.querySelector('img') && link.querySelector('img').src)
+      if (lightbox && lbImg) {
+        lbImg.src = src
+        lightbox.classList.add('open')
+        lightbox.setAttribute('aria-hidden', 'false')
+      } else {
+        window.open(src, '_blank')
+      }
+    })
+  }
+
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && lightbox.classList.contains('open')) {
       lightbox.classList.remove('open')

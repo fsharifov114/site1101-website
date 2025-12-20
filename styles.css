@@ -343,6 +343,44 @@ body {
   gap: 1rem;
 }
 
+/* Layout for project content with media */
+.project-content {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.project-text {
+  flex: 1;
+}
+
+.project-media a { display: inline-block; }
+
+.project-media img {
+  width: 220px;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.15);
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+  cursor: zoom-in;
+  transition: transform 0.15s ease;
+}
+
+.project-media img:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .project-content {
+    flex-direction: column;
+  }
+  .project-media img {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
 .project-header h3 {
   font-size: 1.25rem;
   color: var(--text-primary);
